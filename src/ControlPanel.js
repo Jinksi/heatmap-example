@@ -33,7 +33,7 @@ export default class ControlPanel extends PureComponent {
 
     return (
       <Container>
-        <h3>Fish Abundance</h3>
+        <h3>Indicator Species Abundance</h3>
         <p>
           from <b>{formatTime(startTime)}</b> to <b>{formatTime(endTime)}</b>.
         </p>

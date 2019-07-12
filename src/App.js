@@ -89,15 +89,20 @@ export default class App extends Component {
           0,
           'rgba(33,102,172,0)',
           0.2,
-          'rgb(103,169,207)',
+          '#FCE17C',
+          // 'rgb(103,169,207)',
           0.4,
-          'rgb(209,229,240)',
+          '#F7A541',
+          // 'rgb(209,229,240)',
           0.6,
-          'rgb(253,219,199)',
+          '#FAA974',
+          // 'rgb(253,219,199)',
           0.8,
-          'rgb(239,138,98)',
+          '#F99367',
+          // 'rgb(239,138,98)',
           0.9,
-          'rgb(255,201,101)'
+          '#EF7777'
+          // 'rgb(255,201,101)'
         ],
         // Adjust the heatmap radius by zoom level
         'heatmap-radius': [
@@ -200,7 +205,7 @@ export default class App extends Component {
           onViewportChange={this._onViewportChange}
           mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
           onLoad={this._handleMapLoaded}
-          onClick={console.log}
+          onClick={e => console.log(`${e.lngLat[0]}, ${e.lngLat[1]}`)}
         />
         <ControlPanel
           containerComponent={this.props.containerComponent}

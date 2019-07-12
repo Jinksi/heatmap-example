@@ -50,7 +50,6 @@
 { "type": "Feature", "properties": { "id": "cam6", "mag": 4, "time": 1562485388000 }, "geometry": { "type": "Point", "coordinates": [ 153.5507, -28.1693, 0 ] } },
 { "type": "Feature", "properties": { "id": "cam7", "mag": 8, "time": 1562485388000 }, "geometry": { "type": "Point", "coordinates": [ 153.5455, -28.1689, 0 ] } },
 
-
 { "type": "Feature", "properties": { "id": "cam1", "mag": 10, "time": 1562398988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5473, -28.1708, 0 ] } },
 { "type": "Feature", "properties": { "id": "cam2", "mag": 2, "time": 1562398988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5478, -28.1704, 0 ] } },
 { "type": "Feature", "properties": { "id": "cam3", "mag": 4, "time": 1562398988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5482, -28.1700, 0 ] } },
@@ -100,7 +99,6 @@
 { "type": "Feature", "properties": { "id": "cam6", "mag": 4, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5507, -28.1693, 0 ] } },
 { "type": "Feature", "properties": { "id": "cam7", "mag": 8, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5455, -28.1689, 0 ] } },
 
-
 { "type": "Feature", "properties": { "id": "cam1", "mag": 10, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5473, -28.1708, 0 ] } },
 { "type": "Feature", "properties": { "id": "cam2", "mag": 2, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5478, -28.1704, 0 ] } },
 { "type": "Feature", "properties": { "id": "cam3", "mag": 4, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5482, -28.1700, 0 ] } },
@@ -147,7 +145,156 @@
 { "type": "Feature", "properties": { "id": "cam4", "mag": 4, "time": 1561534988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5487, -28.1695, 0 ] } },
 { "type": "Feature", "properties": { "id": "cam5", "mag": 5, "time": 1561534988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5498, -28.1694, 0 ] } },
 { "type": "Feature", "properties": { "id": "cam6", "mag": 4, "time": 1561534988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5507, -28.1693, 0 ] } },
-{ "type": "Feature", "properties": { "id": "cam7", "mag": 8, "time": 1561534988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5455, -28.1689, 0 ] } }
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 8, "time": 1561534988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5455, -28.1689, 0 ] } },
+
+
+
+
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 10, "time": 1562917388000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 2, "time": 1562917388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 4, "time": 1562917388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 10, "time": 1562917388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 2, "time": 1562917388000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 1, "time": 1562917388000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 1, "time": 1562917388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 3, "time": 1562830988000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 9, "time": 1562830988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 10, "time": 1562830988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 2, "time": 1562830988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 4, "time": 1562830988000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 6, "time": 1562830988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 5, "time": 1562830988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 6, "time": 1562744588000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 2, "time": 1562744588000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 6, "time": 1562744588000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 1, "time": 1562744588000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 5, "time": 1562744588000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 1, "time": 1562744588000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 7, "time": 1562744588000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 9, "time": 1562658188000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 7, "time": 1562658188000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 8, "time": 1562658188000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 1, "time": 1562658188000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 6, "time": 1562658188000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 8, "time": 1562658188000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 2, "time": 1562658188000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 6, "time": 1562571788000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 5, "time": 1562571788000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 2, "time": 1562571788000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 2, "time": 1562571788000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 5, "time": 1562571788000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 2, "time": 1562571788000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 9, "time": 1562571788000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 7, "time": 1562485388000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 9, "time": 1562485388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 3, "time": 1562485388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 4, "time": 1562485388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 5, "time": 1562485388000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 4, "time": 1562485388000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 8, "time": 1562485388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 10, "time": 1562398988000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 2, "time": 1562398988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 4, "time": 1562398988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 10, "time": 1562398988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 2, "time": 1562398988000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 1, "time": 1562398988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 1, "time": 1562398988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 3, "time": 1562312588000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 9, "time": 1562312588000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 10, "time": 1562312588000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 2, "time": 1562312588000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 4, "time": 1562312588000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 6, "time": 1562312588000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 5, "time": 1562312588000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 6, "time": 1562226188000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 2, "time": 1562226188000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 6, "time": 1562226188000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 1, "time": 1562226188000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 5, "time": 1562226188000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 1, "time": 1562226188000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 7, "time": 1562226188000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 9, "time": 1562139788000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 7, "time": 1562139788000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 8, "time": 1562139788000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 1, "time": 1562139788000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 6, "time": 1562139788000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 8, "time": 1562139788000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 2, "time": 1562139788000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 6, "time": 1562053388000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 5, "time": 1562053388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 2, "time": 1562053388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 2, "time": 1562053388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 5, "time": 1562053388000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 2, "time": 1562053388000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 9, "time": 1562053388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 7, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 9, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 3, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 4, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 5, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 4, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 8, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 10, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 2, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 4, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 10, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 2, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 1, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 1, "time": 1561966988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 3, "time": 1561880588000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 9, "time": 1561880588000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 10, "time": 1561880588000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 2, "time": 1561880588000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 4, "time": 1561880588000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 6, "time": 1561880588000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 5, "time": 1561880588000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 6, "time": 1561794188000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 2, "time": 1561794188000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 6, "time": 1561794188000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 1, "time": 1561794188000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 5, "time": 1561794188000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 1, "time": 1561794188000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 7, "time": 1561794188000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 9, "time": 1561707788000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 7, "time": 1561707788000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 8, "time": 1561707788000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 1, "time": 1561707788000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 6, "time": 1561707788000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 8, "time": 1561707788000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 2, "time": 1561707788000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 6, "time": 1561621388000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 5, "time": 1561621388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 2, "time": 1561621388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 2, "time": 1561621388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 5, "time": 1561621388000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 2, "time": 1561621388000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 9, "time": 1561621388000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } },
+
+{ "type": "Feature", "properties": { "id": "cam1", "mag": 7, "time": 1561534988000 }, "geometry": { "type": "Point", "coordinates": [ 153.54734661899543, -28.17088941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam2", "mag": 9, "time": 1561534988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53824661899543, -28.18328941095916, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam3", "mag": 3, "time": 1561534988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53927658724572, -28.18521858862132, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam4", "mag": 4, "time": 1561534988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53876160311486, -28.18453770636451, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam5", "mag": 5, "time": 1561534988000 }, "geometry": { "type": "Point", "coordinates": [ 153.54060696290685, -28.186920775293828, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam6", "mag": 4, "time": 1561534988000 }, "geometry": { "type": "Point", "coordinates": [ 153.5361866824605, -28.18518076193848, 0 ] } },
+{ "type": "Feature", "properties": { "id": "cam7", "mag": 8, "time": 1561534988000 }, "geometry": { "type": "Point", "coordinates": [ 153.53494213746745, -28.186239903876736, 0 ] } }
 
 ]
 }
