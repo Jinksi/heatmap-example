@@ -104,10 +104,10 @@ export default class App extends Component {
           'interpolate',
           ['linear'],
           ['zoom'],
-          0,
-          2,
+          10,
+          35,
           MAX_ZOOM_LEVEL,
-          20
+          50
         ],
         // Transition from heatmap to circle layer by zoom level
         'heatmap-opacity': [
@@ -196,7 +196,7 @@ export default class App extends Component {
           {...viewport}
           width="100%"
           height="100%"
-          mapStyle="mapbox://styles/mapbox/dark-v10"
+          mapStyle="mapbox://styles/jinksi/cjxzt908l0p201cqd879lgmuq"
           onViewportChange={this._onViewportChange}
           mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
           onLoad={this._handleMapLoaded}
