@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MapGL from 'react-map-gl'
 import _ from 'lodash'
-import ControlPanel from './ControlPanel'
+// import ControlPanel from './ControlPanel'
 import { json as fetchJson } from 'd3-fetch'
 
 const { REACT_APP_MAPBOX_ACCESS_TOKEN: MAPBOX_ACCESS_TOKEN } = process.env // Set your mapbox token here
