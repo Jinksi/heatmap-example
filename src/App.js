@@ -1,41 +1,33 @@
 import React, { Component } from 'react'
-import { render } from 'react-dom'
 import MapGL from 'react-map-gl'
+import _ from 'lodash'
 import ControlPanel from './ControlPanel'
-import { json as requestJson } from 'd3-request'
+import { json as fetchJson } from 'd3-fetch'
 
 const { REACT_APP_MAPBOX_ACCESS_TOKEN: MAPBOX_ACCESS_TOKEN } = process.env // Set your mapbox token here
 const HEATMAP_SOURCE_ID = 'example-source'
 
 export default class App extends Component {
-  constructor(props) {
-    super(props)
-    const current = new Date().getTime()
-
-    this.state = {
-      viewport: {
-        latitude: -28.1723,
-        longitude: 153.55022,
-        zoom: 14,
-        bearing: 0,
-        pitch: 0
-      },
-      allDay: true,
-      startTime: current,
-      endTime: current,
-      selectedTime: current,
-      abundance: null
-    }
-
-    this._mapRef = React.createRef()
-    this._handleMapLoaded = this._handleMapLoaded.bind(this)
-    this._handleChangeDay = this._handleChangeDay.bind(this)
-    this._handleChangeAllDay = this._handleChangeAllDay.bind(this)
+  static defaultProps = {
+    dataUrl: 'https://hello-r.jinks.dev/geojson'
+    // dataUrl: 'http://localhost:8080/geojson'
   }
 
-  _mkFeatureCollection = features => ({ type: 'FeatureCollection', features })
+  state = {
+    viewport: {
+      latitude: -28.1723,
+      longitude: 153.55022,
+      zoom: 14,
+      bearing: 0,
+      pitch: 0
+    }
+  }
 
-  _filterFeaturesByDay = (features, time) => {
+  mapRef = React.createRef()
+
+  mkFeatureCollection = features => ({ type: 'FeatureCollection', features })
+
+  filterFeaturesByDay = (features, time) => {
     const date = new Date(time)
     const year = date.getFullYear()
     const month = date.getMonth()
@@ -50,7 +42,7 @@ export default class App extends Component {
     })
   }
 
-  _mkHeatmapLayer = (id, source) => {
+  mkHeatmapLayer = (id, source) => {
     const MAX_ZOOM_LEVEL = 24
     return {
       id,
@@ -62,9 +54,9 @@ export default class App extends Component {
         'heatmap-weight': [
           'interpolate',
           ['linear'],
-          ['get', 'mag'],
+          ['get', 'magnitude'],
           0,
-          0,
+          0.1,
           6,
           1
         ],
@@ -110,7 +102,7 @@ export default class App extends Component {
           ['linear'],
           ['zoom'],
           10,
-          35,
+          45,
           MAX_ZOOM_LEVEL,
           50
         ],
@@ -128,66 +120,86 @@ export default class App extends Component {
     }
   }
 
-  _onViewportChange = viewport => this.setState({ viewport })
-
-  _getMap = () => {
-    return this._mapRef.current ? this._mapRef.current.getMap() : null
-  }
-
-  _handleMapLoaded = event => {
-    const map = this._getMap()
-
-    requestJson('/example-data.geojson', (error, response) => {
-      if (!error) {
-        // Note: In a real application you would do a validation of JSON data before doing anything with it,
-        // but for demonstration purposes we ingore this part here and just trying to select needed data...
-        const features = response.features
-        const endTime = features[0].properties.time
-        const startTime = features[features.length - 1].properties.time
-
-        this.setState({
-          abundance: response,
-          endTime,
-          startTime,
-          selectedTime: endTime
+  requestGeoJSON = async ({ viewport }) => {
+    const map = this.getMap()
+    const { latitude, longitude } = viewport
+    const response = await fetch(this.props.dataUrl, {
+      method: 'POST',
+      // headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        lat: latitude,
+        lon: longitude
+      })
+    }).then(res => res.json())
+    const geojsonString = _.get(response, '[0]')
+    try {
+      const geojson = JSON.parse(geojsonString)
+      const source = map.getSource(HEATMAP_SOURCE_ID)
+      if (!source) {
+        map.addSource(HEATMAP_SOURCE_ID, { type: 'geojson', data: geojson })
+        map.addLayer(this.mkHeatmapLayer(HEATMAP_SOURCE_ID, HEATMAP_SOURCE_ID))
+      } else {
+        const existingData = source._data
+        console.log(existingData)
+        source.setData({
+          type: 'FeatureCollection',
+          features: [...existingData.features, ...geojson.features]
         })
-        map.addSource(HEATMAP_SOURCE_ID, { type: 'geojson', data: response })
-        map.addLayer(this._mkHeatmapLayer('heatmap-layer', HEATMAP_SOURCE_ID))
       }
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  debouncedRequestGeoJSON = _.debounce(this.requestGeoJSON, 200)
+
+  onViewportChange = viewport => {
+    this.debouncedRequestGeoJSON({ viewport })
+    this.setState({ viewport })
+  }
+
+  getMap = () => {
+    return this.mapRef.current ? this.mapRef.current.getMap() : null
+  }
+
+  handleMapClick = async e => {
+    console.log(`${e.lngLat[0]}, ${e.lngLat[1]}`)
+  }
+
+  handleMapLoaded = async event => {
+    const map = this.getMap()
+    const { dataUrl } = this.props
+
+    const response = await fetchJson(dataUrl)
+    // const response = await fetch(dataUrl).then(res => res.text())
+
+    console.log({ response })
+
+    const jjj = JSON.parse(response[0])
+    console.log(jjj)
+    const features = response.features
+
+    console.log({ features })
+
+    const endTime = features[0].properties.time || 0
+    const startTime = features[features.length - 1].properties.time || 0
+
+    this.setState({
+      abundance: response,
+      endTime,
+      startTime,
+      selectedTime: endTime
     })
+    map.addSource(HEATMAP_SOURCE_ID, { type: 'geojson', data: response })
+    map.addLayer(this.mkHeatmapLayer('heatmap-layer', HEATMAP_SOURCE_ID))
   }
 
-  _handleChangeDay = time => {
-    this.setState({ selectedTime: time })
-    if (this.state.abundance !== null && this.state.abundance.features) {
-      const features = this._filterFeaturesByDay(
-        this.state.abundance.features,
-        time
-      )
-      this._setMapData(features)
-    }
-  }
-
-  _handleChangeAllDay = allDay => {
-    this.setState({ allDay })
-    if (this.state.abundance !== null && this.state.abundance.features) {
-      this._setMapData(
-        allDay
-          ? this.state.abundance.features
-          : this._filterFeaturesByDay(
-              this.state.abundance.features,
-              this.state.selectedTime
-            )
-      )
-    }
-  }
-
-  _setMapData = features => {
-    const map = this._getMap()
+  setMapData = features => {
+    const map = this.getMap()
     if (map) {
       map
         .getSource(HEATMAP_SOURCE_ID)
-        .setData(this._mkFeatureCollection(features))
+        .setData(this.mkFeatureCollection(features))
     }
   }
 
@@ -197,17 +209,17 @@ export default class App extends Component {
     return (
       <div style={{ height: '100%' }}>
         <MapGL
-          ref={this._mapRef}
+          ref={this.mapRef}
           {...viewport}
           width="100%"
           height="100%"
           mapStyle="mapbox://styles/jinksi/cjxzt908l0p201cqd879lgmuq"
-          onViewportChange={this._onViewportChange}
+          onViewportChange={this.onViewportChange}
           mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
-          onLoad={this._handleMapLoaded}
-          onClick={e => console.log(`${e.lngLat[0]}, ${e.lngLat[1]}`)}
+          // onLoad={this.handleMapLoaded}
+          onClick={this.handleMapClick}
         />
-        <ControlPanel
+        {/* <ControlPanel
           containerComponent={this.props.containerComponent}
           startTime={startTime}
           endTime={endTime}
@@ -215,7 +227,7 @@ export default class App extends Component {
           allDay={allDay}
           onChangeDay={this._handleChangeDay}
           onChangeAllDay={this._handleChangeAllDay}
-        />
+        /> */}
       </div>
     )
   }
