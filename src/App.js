@@ -207,8 +207,8 @@ export default class App extends Component {
           onViewportChange={this.onViewportChange}
           mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
           onLoad={this.handleMapLoaded}
-          // onClick={this.handleMapClick}
           onMouseDown={this.handleMapClick}
+          onTouchStart={this.onTouchStart}
         />
         <ControlPanel
           containerComponent={this.props.containerComponent}
