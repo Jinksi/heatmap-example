@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MapGL from 'react-map-gl'
 import _ from 'lodash'
-// import ControlPanel from './ControlPanel'
+import ControlPanel from './ControlPanel'
 import { json as fetchJson } from 'd3-fetch'
 
 const { REACT_APP_MAPBOX_ACCESS_TOKEN: MAPBOX_ACCESS_TOKEN } = process.env // Set your mapbox token here
@@ -20,27 +20,13 @@ export default class App extends Component {
       zoom: 11,
       bearing: 0,
       pitch: 0
-    }
+    },
+    features: [],
+    magnitude: 0.01
   }
 
   mapRef = React.createRef()
-
   mkFeatureCollection = features => ({ type: 'FeatureCollection', features })
-
-  filterFeaturesByDay = (features, time) => {
-    const date = new Date(time)
-    const year = date.getFullYear()
-    const month = date.getMonth()
-    const day = date.getDate()
-    return features.filter(feature => {
-      const featureDate = new Date(feature.properties.time)
-      return (
-        featureDate.getFullYear() === year &&
-        featureDate.getMonth() === month &&
-        featureDate.getDate() === day
-      )
-    })
-  }
 
   mkHeatmapLayer = (id, source) => {
     const MAX_ZOOM_LEVEL = 24
@@ -120,6 +106,16 @@ export default class App extends Component {
     }
   }
 
+  handleChangeMagnitude = magnitude => {
+    this.setState({ magnitude })
+    const features = this.filterFeaturesByMagnitude({
+      features: this.state.features,
+      magnitude
+    })
+
+    this.setMapData(features)
+  }
+
   requestGeoJSON = async ({ latitude, longitude }) => {
     const map = this.getMap()
     const response = await fetch(this.props.dataUrl, {
@@ -130,20 +126,29 @@ export default class App extends Component {
         lon: longitude
       })
     }).then(res => res.json())
+
     const geojsonString = _.get(response, '[0]')
+
     try {
       const geojson = JSON.parse(geojsonString)
       const source = map.getSource(HEATMAP_SOURCE_ID)
       if (!source) {
         map.addSource(HEATMAP_SOURCE_ID, { type: 'geojson', data: geojson })
         map.addLayer(this.mkHeatmapLayer(HEATMAP_SOURCE_ID, HEATMAP_SOURCE_ID))
+        this.setState({ features: geojson.features })
       } else {
-        const existingData = source._data
-        console.log(existingData)
-        source.setData({
-          type: 'FeatureCollection',
-          features: [...existingData.features, ...geojson.features]
+        const existingFeatures = this.state.features
+        const features = [...existingFeatures, ...geojson.features]
+        this.setState({
+          features
         })
+        const { magnitude } = this.state
+        this.setMapData(
+          this.filterFeaturesByMagnitude({
+            features,
+            magnitude
+          })
+        )
       }
     } catch (e) {
       console.error(e)
@@ -154,6 +159,13 @@ export default class App extends Component {
 
   onViewportChange = viewport => {
     this.setState({ viewport })
+  }
+
+  filterFeaturesByMagnitude = ({ features, magnitude }) => {
+    return features.filter(feature => {
+      const featureMagnitude = _.get(feature, 'properties.magnitude')
+      return featureMagnitude >= magnitude
+    })
   }
 
   getMap = () => {
@@ -198,15 +210,11 @@ export default class App extends Component {
           // onClick={this.handleMapClick}
           onMouseDown={this.handleMapClick}
         />
-        {/* <ControlPanel
+        <ControlPanel
           containerComponent={this.props.containerComponent}
-          startTime={startTime}
-          endTime={endTime}
-          selectedTime={selectedTime}
-          allDay={allDay}
-          onChangeDay={this._handleChangeDay}
-          onChangeAllDay={this._handleChangeAllDay}
-        /> */}
+          onChangeMagnitude={this.handleChangeMagnitude}
+          magnitude={this.state.magnitude}
+        />
       </div>
     )
   }
