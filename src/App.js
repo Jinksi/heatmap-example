@@ -17,7 +17,7 @@ export default class App extends Component {
     viewport: {
       latitude: -28.1723,
       longitude: 153.55022,
-      zoom: 14,
+      zoom: 11,
       bearing: 0,
       pitch: 0
     }
@@ -120,9 +120,8 @@ export default class App extends Component {
     }
   }
 
-  requestGeoJSON = async ({ viewport }) => {
+  requestGeoJSON = async ({ latitude, longitude }) => {
     const map = this.getMap()
-    const { latitude, longitude } = viewport
     const response = await fetch(this.props.dataUrl, {
       method: 'POST',
       // headers: { 'Content-Type': 'application/json' },
@@ -154,7 +153,6 @@ export default class App extends Component {
   debouncedRequestGeoJSON = _.debounce(this.requestGeoJSON, 200)
 
   onViewportChange = viewport => {
-    this.debouncedRequestGeoJSON({ viewport })
     this.setState({ viewport })
   }
 
@@ -163,35 +161,15 @@ export default class App extends Component {
   }
 
   handleMapClick = async e => {
-    console.log(`${e.lngLat[0]}, ${e.lngLat[1]}`)
+    const longitude = e.lngLat[0]
+    const latitude = e.lngLat[1]
+    console.log({ latitude, longitude })
+    this.requestGeoJSON({ latitude, longitude })
   }
 
-  handleMapLoaded = async event => {
-    const map = this.getMap()
-    const { dataUrl } = this.props
-
-    const response = await fetchJson(dataUrl)
-    // const response = await fetch(dataUrl).then(res => res.text())
-
-    console.log({ response })
-
-    const jjj = JSON.parse(response[0])
-    console.log(jjj)
-    const features = response.features
-
-    console.log({ features })
-
-    const endTime = features[0].properties.time || 0
-    const startTime = features[features.length - 1].properties.time || 0
-
-    this.setState({
-      abundance: response,
-      endTime,
-      startTime,
-      selectedTime: endTime
-    })
-    map.addSource(HEATMAP_SOURCE_ID, { type: 'geojson', data: response })
-    map.addLayer(this.mkHeatmapLayer('heatmap-layer', HEATMAP_SOURCE_ID))
+  handleMapLoaded = event => {
+    const { latitude, longitude } = this.state.viewport
+    this.requestGeoJSON({ latitude, longitude })
   }
 
   setMapData = features => {
@@ -216,8 +194,9 @@ export default class App extends Component {
           mapStyle="mapbox://styles/jinksi/cjxzt908l0p201cqd879lgmuq"
           onViewportChange={this.onViewportChange}
           mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
-          // onLoad={this.handleMapLoaded}
-          onClick={this.handleMapClick}
+          onLoad={this.handleMapLoaded}
+          // onClick={this.handleMapClick}
+          onMouseDown={this.handleMapClick}
         />
         {/* <ControlPanel
           containerComponent={this.props.containerComponent}
