@@ -19,7 +19,7 @@ export default class App extends Component {
       longitude: 153.55022,
       zoom: 11,
       bearing: 0,
-      pitch: 0
+      pitch: 45
     },
     features: [],
     magnitude: 0.01

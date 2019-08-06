@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 
 const defaultContainer = ({ children }) => (
   <div className="control-panel">{children}</div>
