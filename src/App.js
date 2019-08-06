@@ -17,7 +17,7 @@ export default class App extends Component {
     viewport: {
       latitude: -28.1723,
       longitude: 153.55022,
-      zoom: 11,
+      zoom: 12,
       bearing: 0,
       pitch: 45
     },
