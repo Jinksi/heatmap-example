@@ -14,8 +14,9 @@ const ControlPanel = ({ onChangeMagnitude, magnitude, containerComponent }) => {
     <Container>
       <h3>Filter datapoints</h3>
 
-      <div className={`input `}>
-        <label>Min Magnitude: </label>
+      <div className={`input`}>
+        <label>Min Magnitude: {magnitude}</label>
+        <br />
         <input
           type="range"
           min={0}

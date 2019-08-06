@@ -22,16 +22,11 @@ body {
   line-height: 2;
   color: #6b6b76;
   outline: none;
-  text-transform: uppercase;
 }
 
 label {
   display: inline-block;
   width: 150px;
-}
-
-input {
-  margin-left: 20px;
 }
 
 .input.disabled {
