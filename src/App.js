@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import MapGL from 'react-map-gl'
 import _ from 'lodash'
 import ControlPanel from './ControlPanel'
-import { json as fetchJson } from 'd3-fetch'
 
 const { REACT_APP_MAPBOX_ACCESS_TOKEN: MAPBOX_ACCESS_TOKEN } = process.env // Set your mapbox token here
+const MAPBOX_STYLES_URL = 'mapbox://styles/jinksi/cjxzt908l0p201cqd879lgmuq'
 const HEATMAP_SOURCE_ID = 'example-source'
 
 export default class App extends Component {
@@ -26,6 +26,7 @@ export default class App extends Component {
   }
 
   mapRef = React.createRef()
+
   mkFeatureCollection = features => ({ type: 'FeatureCollection', features })
 
   mkHeatmapLayer = (id, source) => {
@@ -45,62 +46,6 @@ export default class App extends Component {
           0.1,
           6,
           1
-        ],
-        // Increase the heatmap color weight weight by zoom level
-        // heatmap-intensity is a multiplier on top of heatmap-weight
-        'heatmap-intensity': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          0,
-          1,
-          MAX_ZOOM_LEVEL,
-          3
-        ],
-        // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
-        // Begin color ramp at 0-stop with a 0-transparancy color
-        // to create a blur-like effect.
-        'heatmap-color': [
-          'interpolate',
-          ['linear'],
-          ['heatmap-density'],
-          0,
-          'rgba(33,102,172,0)',
-          0.2,
-          '#FCE17C',
-          // 'rgb(103,169,207)',
-          0.4,
-          '#F7A541',
-          // 'rgb(209,229,240)',
-          0.6,
-          '#FAA974',
-          // 'rgb(253,219,199)',
-          0.8,
-          '#F99367',
-          // 'rgb(239,138,98)',
-          0.9,
-          '#EF7777'
-          // 'rgb(255,201,101)'
-        ],
-        // Adjust the heatmap radius by zoom level
-        'heatmap-radius': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          10,
-          45,
-          MAX_ZOOM_LEVEL,
-          50
-        ],
-        // Transition from heatmap to circle layer by zoom level
-        'heatmap-opacity': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          7,
-          1,
-          MAX_ZOOM_LEVEL,
-          0.5
         ]
       }
     }
@@ -155,8 +100,6 @@ export default class App extends Component {
     }
   }
 
-  debouncedRequestGeoJSON = _.debounce(this.requestGeoJSON, 200)
-
   onViewportChange = viewport => {
     this.setState({ viewport })
   }
@@ -179,7 +122,7 @@ export default class App extends Component {
     this.requestGeoJSON({ latitude, longitude })
   }
 
-  handleMapLoaded = event => {
+  handleMapLoaded = () => {
     const { latitude, longitude } = this.state.viewport
     this.requestGeoJSON({ latitude, longitude })
   }
@@ -194,7 +137,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { viewport, allDay, selectedTime, startTime, endTime } = this.state
+    const { viewport, magnitude } = this.state
 
     return (
       <div style={{ height: '100%' }}>
@@ -203,17 +146,17 @@ export default class App extends Component {
           {...viewport}
           width="100%"
           height="100%"
-          mapStyle="mapbox://styles/jinksi/cjxzt908l0p201cqd879lgmuq"
-          onViewportChange={this.onViewportChange}
+          mapStyle={MAPBOX_STYLES_URL}
           mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
+          onViewportChange={this.onViewportChange}
           onLoad={this.handleMapLoaded}
           onMouseDown={this.handleMapClick}
-          onTouchStart={this.onTouchStart}
+          onTouchStart={this.handleMapClick}
         />
         <ControlPanel
           containerComponent={this.props.containerComponent}
           onChangeMagnitude={this.handleChangeMagnitude}
-          magnitude={this.state.magnitude}
+          magnitude={magnitude}
         />
       </div>
     )
